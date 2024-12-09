@@ -1,0 +1,40 @@
+version: '3.9'
+
+services:
+  vite:
+    build:
+      context: .
+      dockerfile: ./infra/development/vite/Dockerfile
+    volumes:
+      - type: bind
+        source: ./vue
+        target: /opt/app/vue
+      - type: volume
+        source: node_modules
+        target: /opt/app/vue/node_modules
+    ports:
+      - "3000:3000"
+  nginx:
+    build: ./infra/development/nginx
+    volumes:
+      - ./laravel:/var/www/html
+      - ./infra/development/nginx/default.conf:/etc/nginx/conf.d/default.conf
+    ports:
+      - "9000:80"
+  app:
+    build: ./infra/development/php
+    volumes:
+      - ./laravel:/var/www/html
+  db:
+    build: ./infra/development/mysql
+    volumes:
+      - db-store:/var/lib/mysql
+
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      device: ${PWD}/vue/node_modules
+      o: bind
+  db-store:
