@@ -1,0 +1,8 @@
+.DS_Store
+.vscode
+laravel/vendor
+vue/node_modules
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
