@@ -8,7 +8,7 @@ down:
 	docker compose down
 
 .PHONY: stop
-down:
+stop:
 	docker compose stop
 
 .PHONY: setup
