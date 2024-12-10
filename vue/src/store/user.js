@@ -1,4 +1,7 @@
-export const useUerStore = defineStore("user", () => {
+import { ref, computed } from "vue";
+import { defineStore } from "pinia";
+
+export const useUserStore = defineStore("user", () => {
   const id = ref(0);
   const name = ref("Eduardo");
   const score = ref(0);
@@ -7,5 +10,5 @@ export const useUerStore = defineStore("user", () => {
     score.value++;
   }
 
-  return { score, name, doubleScore, increment };
+  return { id, name, score, doubleScore, increment };
 });
