@@ -14,3 +14,7 @@
 - nginx
 - php
 - mysql
+
+### vue-router
+
+- npm install vue-router@4
