@@ -15,6 +15,7 @@ export default defineConfig({
         new URL("./src/components", import.meta.url)
       ),
       "@pages": fileURLToPath(new URL("./src/pages", import.meta.url)),
+      "@store": fileURLToPath(new URL("./src/store", import.meta.url)),
     },
   },
   server: {
