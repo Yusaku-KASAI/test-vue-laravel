@@ -171,8 +171,11 @@ api-first:
 # make api-first
 # create laravelするときに手動確認あるかも
 # プロジェクト名は.(カレントディレクトリ)を指定
-# .envと.env.exampleを修正
+# .envと.env.exampleを修正(DB情報)
 # cors設定(vite側だけでもとりあえず大丈夫そう)
+#
+# ちなみに、フロントとAPIで若干手順が違うのは、
+# フロント側のviteサーバーの起動にnode_modulesが必要なためである。
 #
 # .dockerignoreのアンコメント再確認
 # make reset
